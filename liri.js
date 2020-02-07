@@ -10,11 +10,7 @@
 // DotEnv - npm install dotenv | https://www.npmjs.com/package/dotenv
 // Spotify - npm install --save node-spotify-api | https://www.npmjs.com/package/node-spotify-api
 
-// Setup
-// ----------------------------------------------------
-// ----------------------------------------------------
-
-// Required NPMs
+// Require NPMs and keys file
 // ----------------------------------------------------
 
 require("dotenv").config(); // DotEnv
