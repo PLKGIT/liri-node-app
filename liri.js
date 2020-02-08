@@ -4,7 +4,7 @@
 // ----------------------------------------------------
 // ----------------------------------------------------
 
-// NPM Packages Installed
+// Info: NPM Packages Installed
 
 // Axios - npm install axios | https://www.npmjs.com/package/axios
 // Moment - npm install moment | https://www.npmjs.com/package/moment and https://momentjs.com/docs/
@@ -16,9 +16,8 @@ require("dotenv").config(); // DotEnv
 
 // Imports Spotify keys file
 var keys = require("./keys");
-
-// Access Spotify keys
-// var spotify = new Spotify(keys.spotify);
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
 
 // Includes the Axios package for using APIs
 var axios = require("axios");
@@ -42,30 +41,57 @@ var fs = require("fs");
 // console.log("---Contents of process.argv5---");
 // console.log(process.argv[5]);
 
+// Logic
+// ----------------------------------------------------
+// ----------------------------------------------------
+
+// Capture user's input for desired feature
 var feature = process.argv[2];
 // console.log("---Contents of feature---");
 // console.log(feature);
 
+// Call function based on user's input
 switch (feature) {
     case "concert-this":
+        // console.clear();
+        // console.log("---Test concert-this Selected---");
         // console.log("Concert it is!");
+        // Call concertThis()
         concertThis();
         break;
 
     case "spotify-this-song":
+        console.clear();
+        console.log("---Test spotify-this-song Selected---");
         console.log("Song it is!");
         break;
 
     case "movie-this":
+        console.clear();
+        console.log("---Test movie-this Selected---");
         console.log("Movie it is!");
         break;
 
     case "do-what-it-says":
+        console.clear();
+        console.log("---Test do-what-it-says Selected---");
         console.log("Surprise me!");
         break;
 
     default:
-        console.log("Please specify a LIRI feature.");
+        // If no feature is specified, clear the console and console.log the error.
+        console.clear();
+        console.log("-----------------------------------------------------------------");
+        console.log("-----------------------------------------------------------------");
+        console.log(" Sorry, but you did not specify a valid LIRI feature! Please try")
+        console.log(" again with one (1) of the following options:");
+        console.log("   1) node liri.js concert-this 'artist/band name'");
+        console.log("   2) node liri.js spotify-this-song 'song name'");
+        console.log("   3) node liri.js movie-this 'movie name'");
+        console.log("   4) node liri.js do-what-is-says");
+        console.log("-----------------------------------------------------------------");
+        console.log("-----------------------------------------------------------------");
+        console.log(" ");
 }
 
 
