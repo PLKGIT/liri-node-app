@@ -3,7 +3,7 @@
 // ----------------------------------------------------
 
 // Indicates that the file has been loaded
-console.log('this is loaded');
+console.log('---- Keys.js is loaded ---');
 
 // Makes Spotify ID and Secret public to other modules
 exports.spotify = {
