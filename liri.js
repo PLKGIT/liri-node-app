@@ -154,7 +154,7 @@ function concertThis() {
                 console.log(textBands);
 
                 // Write to the log
-                fs.appendFile("log.txt", textBands, function (err) {
+                fs.appendFile("./files/log.txt", textBands, function (err) {
                     // If there is an error, log it to the console
                     if (err) {
                         console.log(err);
@@ -172,7 +172,7 @@ function concertThis() {
                         // Console log text to the screen
                         console.log(textBands);
                         // Write text to log file
-                        fs.appendFile("log.txt", textBands, function (err) {
+                        fs.appendFile("./files/log.txt", textBands, function (err) {
                             // If there is an error, log it to the console
                             if (err) {
                                 console.log(err);
@@ -184,7 +184,7 @@ function concertThis() {
                         // Console log text to the screen
                         console.log(textBands);
                         // Write text to log file
-                        fs.appendFile("log.txt", textBands, function (err) {
+                        fs.appendFile("./files/log.txt", textBands, function (err) {
                             // If there is an error, log it to the console
                             if (err) {
                                 console.log(err);
@@ -237,7 +237,7 @@ function spotifyThis() {
             console.log(textSong);
 
             // Write to the log
-            fs.appendFile("log.txt", textSong, function (err) {
+            fs.appendFile("./files/log.txt", textSong, function (err) {
                 // If there is an error, log it to the console
                 if (err) {
                     console.log(err);
@@ -328,7 +328,7 @@ function movieThis() {
                 console.log("--------------------------------------------------------------------------");
                 // Write each record in the response to the log file
                 textMovieFile = response.data.Title + "\r" + " Year: " + response.data.Year + "\r" + " IMDB Rating: " + response.data.Ratings[0].Value + "\r" + " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\r" + " Produced: " + response.data.Country + "\r" + " Language: " + response.data.Language + "\r" + " Plot: " + response.data.Plot + "\r" + " Actors: " + response.data.Actors + "\r";
-                fs.appendFile("log.txt", textMovieFile, function (err) {
+                fs.appendFile("./files/log.txt", textMovieFile, function (err) {
                     // If there is an error, log it to the console
                     if (err) {
                         console.log(err);
