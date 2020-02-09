@@ -39,8 +39,13 @@ var song = "";
 
 // Check for LIRI Feature Specified
 // ----------------------------------------------------
+
 // console.log("---Contents of process.argv---");
 // console.log(process.argv);
+// console.log("---Contents of process.argv0---");
+// console.log(process.argv[0]);
+// console.log("---Contents of process.argv1---");
+// console.log(process.argv[1]);
 // console.log("---Contents of process.argv2---");
 // console.log(process.argv[2]);
 // console.log("---Contents of process.argv3---");
@@ -55,7 +60,7 @@ var feature = process.argv[2];
 // console.log("---Contents of feature---");
 // console.log(feature);
 
-// Call function based on user's input
+// Call feature function based on user's input
 switch (feature) {
     case "concert-this":
         // console.clear();
@@ -66,9 +71,9 @@ switch (feature) {
         break;
 
     case "spotify-this-song":
-        console.clear();
-        console.log("---Test spotify-this-song Selected---");
-        console.log("Song it is!");
+        // console.clear();
+        // console.log("---Test spotify-this-song Selected---");
+        // console.log("Song it is!");
         // Call spotifyThis()
         spotifyThis();
         break;
@@ -82,17 +87,16 @@ switch (feature) {
         break;
 
     case "do-what-it-says":
-        console.clear();
-        console.log("---Test do-what-it-says Selected---");
-        console.log("Surprise me!");
+        // console.clear();
+        // console.log("---Test do-what-it-says Selected---");
+        // console.log("Surprise me!");
         // Call justDoIt()
         justDoIt();
         break;
 
     default:
         // If no feature is specified, clear the console and console.log the error.
-        console.clear();
-        console.log("-----------------------------------------------------------------");
+        console.log(" ");
         console.log("-----------------------------------------------------------------");
         console.log(" Sorry, but you did not specify a valid LIRI feature! Please try")
         console.log(" again with one (1) of the following options:");
@@ -101,10 +105,8 @@ switch (feature) {
         console.log("   3) node liri.js movie-this 'movie name'");
         console.log("   4) node liri.js do-what-is-says");
         console.log("-----------------------------------------------------------------");
-        console.log("-----------------------------------------------------------------");
         console.log(" ");
 }
-
 
 // LIRI app should take all of the following commands
 // ----------------------------------------------------
@@ -117,107 +119,114 @@ switch (feature) {
 
 function concertThis() {
 
-    // console.log (artist);
-
-    // Declare artist variable for artist name
-    if (artist === "") {
-
-
-        // console.log (artist);
-
-
-        // Remove any spaces from User's input for artist name
-        for (var i = 3; i < process.argv.length; i++) {
-            artist += process.argv[i];
-        }
-
-        // console.log (artist);
-
-    }
-
     // Set app_id to Bootcamp's key
     const api_id = "codingbootcamp";
 
-    // Create Query URL from user input and app_id
-    var qryBands = `https://rest.bandsintown.com/artists/${artist}/events?app_id=${api_id}`
+    // Set error counter
+    var errCount = false;
 
-    // Check for valid Query URL
-    // console.log("---Constructed Query URL---");
-    // console.log(qryBands);
+    // Set value of artist variable
+    if (artist === "") {
+        if (process.argv[3] === undefined) {
 
-    // Get API data with Axios.get function which returns a promise
-    axios
-        .get(qryBands)
-        .then(function (response) {
-            // If Axios call was successful...
-            // Check whether there are any concert dates for the artist
-            // console.log("---Response Contents---");
-            // console.log(response);
-            if (response.data.length === 0) {
-                // console.clear();
-                console.log("-----------------------------------------------------------------");
-                console.log(" Sorry, there are no concert dates for " + artist.toUpperCase());
-                console.log("-----------------------------------------------------------------");
+            console.log(" ");
+            console.log("-----------------------------------------------------------------");
+            console.log(" Please provide an artist/band name, for example:");
+            console.log("         node liri.js concert-this Maroon 5 ");
+            console.log("-----------------------------------------------------------------");
+            console.log(" ");
 
-            } else {
-                // Create and set variable 'text' to Artist's name plus text
-                var textBands = response.data[0].artist.name + " will appear in concert at:" + "\r";
+            errCount = true;
 
-                // console.clear();
-                // Console log to screen
-                console.log(textBands);
-                console.log("--------------------------------------------------------------------------");
-                // Write to the log
-                fs.appendFile("./files/log.txt", textBands, function (err) {
-                    // If there is an error, log it to the console
-                    if (err) {
-                        console.log(err);
-                    }
-                });
+        } else {
 
-                // Console each record of the response to the screen
-                // Write each record of the response to the log file
-                for (var i = 0; i < response.data.length; i++) {
-                    // Checks for empty region value, region is excluded from output if empty
-                    if (response.data[i].venue.region === "") {
-                        // Set value of text variable
-                        textBandsScreen = response.data[i].venue.name + " in " + response.data[i].venue.city + " (" + response.data[i].venue.country + ")" + " on " + moment(response.data[i].datetime).format("MM/DD/YYYY");
+            // Remove any spaces from User's input for artist name
+            for (var i = 3; i < process.argv.length; i++) {
 
-                        // Console log text to the screen
-                        console.log(textBandsScreen);
-                        // Write text to log file
-                        textBandsFile = response.data[i].venue.name + " in " + response.data[i].venue.city + " (" + response.data[i].venue.country + ")" + " on " + moment(response.data[i].datetime).format("MM/DD/YYYY") + "\r";
-                        fs.appendFile("./files/log.txt", textBandsFile, function (err) {
-                            // If there is an error, log it to the console
-                            if (err) {
-                                console.log(err);
-                            }
-                        });
-
-                    } else {
-                        // Set value of text variable, including region
-                        textBandsScreen = response.data[i].venue.name + " in " + response.data[i].venue.city + ", " + response.data[i].venue.region + " (" + response.data[i].venue.country + ")" + " on " + moment(response.data[i].datetime).format("MM/DD/YYYY");
-                        // Console log text to the screen
-                        console.log(textBandsScreen);
-                        textBandsFile = response.data[i].venue.name + " in " + response.data[i].venue.city + ", " + response.data[i].venue.region + " (" + response.data[i].venue.country + ")" + " on " + moment(response.data[i].datetime).format("MM/DD/YYYY") + "\r";
-                        // Write text to log file
-                        fs.appendFile("./files/log.txt", textBandsFile, function (err) {
-                            // If there is an error, log it to the console
-                            if (err) {
-                                console.log(err);
-                            }
-                        });
-
-                    }
-
+                if (i < (process.argv.length - 1)) {
+                    artist += process.argv[i] + "+";
+                } else {
+                    artist += process.argv[i];
                 }
-            }
-        })
-        
-        .catch(function (error) {
-            console.log(error);
-        });
 
+            }
+            // console.log ("-----Artist Supplied------");
+            // console.log(artist);
+            // console.log ("-----Error Counter------");
+            // console.log(errCount);
+        }
+    }
+
+    if (errCount === false) {
+
+        // Create Query URL using API URL, 'artist' variable, and constant 'app_id'
+        var qryArtists = `https://rest.bandsintown.com/artists/${artist}/events?app_id=${api_id}`
+
+        // console.log("---Constructed Query URL---");
+        // console.log(qryArtists);
+
+        // Get API data with Axios.get function which returns a promise
+        axios
+            .get(qryArtists)
+            .then(function (response) {
+                // On success...
+                // Create artistDisplay variable and format artist variable
+                var artistDisplay = artist.replace(/[+]/g, " ").toUpperCase();
+                // Check whether there are any concert dates for the artist
+                if (response.data.length === 0) {
+                    console.log(" ");
+                    console.log("-----------------------------------------------------------------");
+                    console.log(" Sorry, there are no concert dates for " + artistDisplay);
+                    console.log("-----------------------------------------------------------------");
+                    console.log(" ");
+
+                } else {
+                    // Create and set variable 'textBandsScreen' to Artist's display name and intro text
+                    // Console log to screen
+                    var textBandsScreen = "Artist Searched: " + artistDisplay + " will be in concert at:" + "\n" + "--------------------------------------------------------------------------";
+                    console.log(textBandsScreen);
+                    // Create and set variable 'textBandsText' to Artist's display name and intro text
+                    // Write to the log file
+                    var textBandsText = "Artist Searched: " + artistDisplay + " will be in concert at:" + "\r" + "--------------------------------------------------------------------------" + "\r";
+                    fs.appendFile("./files/log.txt", textBandsText, function (err) {
+                        // If there is an error, log it to the console
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+
+                    // For each response record, console to the screen and write to the log file
+                    for (var i = 0; i < response.data.length; i++) {
+                        // Checks for empty region value, region is excluded from output if empty
+                        if (response.data[i].venue.region === "") {
+                            // Set value of variables, excluding region
+                            textBandsScreen = response.data[i].venue.name + " in " + response.data[i].venue.city + " (" + response.data[i].venue.country + ")" + " on " + moment(response.data[i].datetime).format("MM/DD/YYYY");
+                            textBandsText = textBandsScreen + "\r";
+                        } else {
+                            // Set value of variables, including region
+                            textBandsScreen = response.data[i].venue.name + " in " + response.data[i].venue.city + ", " + response.data[i].venue.region + " (" + response.data[i].venue.country + ")" + " on " + moment(response.data[i].datetime).format("MM/DD/YYYY");
+                            textBandsText = textBandsScreen + "\r";
+                        }
+
+                        // Console log text to the screen
+                        console.log(textBandsScreen);
+                        // Write text to log file
+                        fs.appendFile("./files/log.txt", textBandsText, function (err) {
+                            // If there is an error, log it to the console
+                            if (err) {
+                                console.log(err);
+                            }
+                        });
+
+                    }
+                }
+            })
+
+            .catch(function (error) {
+                // If there is an error, log it to the console
+                console.log(error);
+            });
+    }
 }
 
 
@@ -235,7 +244,10 @@ function spotifyThis() {
     // console.log(spotify.credentials.id);
     // console.log(spotify.credentials.secret);
 
+    // Check to see whether song is empty
     if (song === "") {
+
+        // Set song to default
 
         if (process.argv[3] === undefined) {
             song = "The Sign"
@@ -247,40 +259,74 @@ function spotifyThis() {
         }
 
     }
-
-    console.log("---Before Call---");
-    console.log(song);
-
-
+    // Get track data with Spotify API based on the contents of song
     spotify
         .search({ type: 'track', query: `${song}` })
         .then(function (response) {
+            // Capitalize song contents and set it to songDisplay
+            var songDisplay = song.toUpperCase();
 
-            // Create and set variable 'textSong' to Song name
-            var textSong = song + "\n";
+            // Check for no result set
+            if (response.tracks.items.length === 0) {
+                console.log(" ");
+                console.log("-----------------------------------------------------------------");
+                console.log(" Sorry, there are no tracks found for " + songDisplay);
+                console.log("-----------------------------------------------------------------");
+                console.log(" ");
 
-            // Console log to screen
-            // console.log("---After Call---");
-            // console.log(textSong);
+            } else {
+                // Create and set variable 'textSong' to Song name
+                var textSongScreen = "Track Searched: " + songDisplay + "\n" + "-----------------------------------------------------------------";
+                // Console log song name
+                console.log(textSongScreen);
+                var textSongText = "Track Searched: " + songDisplay + "\r" + "-----------------------------------------------------------------" + "\r";
+                // Write song name to the log file
+                fs.appendFile("./files/log.txt", textSongText, function (err) {
+                    // If there is an error, log it to the console
+                    if (err) {
+                        console.log(err);
+                    }
+                });
 
-            // Write to the log
-            fs.appendFile("./files/log.txt", textSong, function (err) {
-                // If there is an error, log it to the console
-                if (err) {
-                    console.log(err);
+
+                for (var i = 0; i < response.tracks.items.length; i++) {
+
+                    // Console each record of the response to the screen
+
+                    console.log("Artist's Name: " + response.tracks.items[i].artists[0].name);
+                    console.log("Song Name: " + response.tracks.items[i].name);
+                    console.log("Preview URL: " + response.tracks.items[i].preview_url);
+                    console.log("Album Name: " + response.tracks.items[i].album.name);
+                    console.log("------------")
+
+
+                    //Write each record of the response to the log file
+                    textSongText = "Artist's Name: " + response.tracks.items[i].artists[0].name + "\r";
+                    textSongText += "Song Name: " + response.tracks.items[i].name + "\r";
+                    textSongText += "Preview URL: " + response.tracks.items[i].preview_url + "\r";
+                    textSongText += "Album Name: " + response.tracks.items[i].album.name + "\r";
+                    textSongText += "------------\r";
+
+                    fs.appendFile("./files/log.txt", textSongText, function (err) {
+                        // If there is an error, log it to the console
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+
                 }
-            });
 
-            // Console each record of the response to the screen
-            // Write each record of the response to the log file
 
-            // console.log(response.tracks);
+                // console.log("-----I made it #3----")
+                // console.log(JSON.stringify(response.tracks, null, 2));
+                // console.log("Artist's Name: " + response.tracks.items[0].artists[0].name);
+                // console.log("Song Name: " + response.tracks.items[0].name);
+                // console.log("Preview URL: " + response.tracks.items[0].preview_url);
+                // console.log("Album Name: " + response.tracks.items[0].album.name);
 
-            console.log("Artist's Name: " + response.tracks.items[0].artists[0].name);
-            console.log("Song Name: " + response.tracks.items[0].name);
-            console.log("Preview URL: " + response.tracks.items[0].preview_url);
-            console.log("Album Name: " + response.tracks.items[0].album.name);
+            }
         })
+
         .catch(function (err) {
             console.log(err);
         });
@@ -295,8 +341,12 @@ function spotifyThis() {
 
 function movieThis() {
 
-    if (movie === "") {
+    // Set app_id to Bootcamp's key
+    const api_key = "trilogy";
 
+    // Check to see whether movie is empty
+    if (movie === "") {
+        // Set movie to default
         if (process.argv[3] === undefined) {
             movie = "Mr. Nobody";
 
@@ -304,18 +354,14 @@ function movieThis() {
 
             // Remove any spaces from User's input for movie name
             for (var i = 3; i < process.argv.length; i++) {
-                movie += process.argv[i] + "+";
+                if (i < (process.argv.length - 1)) {
+                    movie += process.argv[i] + "+";
+                } else {
+                    movie += process.argv[i];
+                }
             }
         }
-
     }
-
-
-    // console.log("---Movie before call---");
-    // console.log(movie);
-
-    // Set app_id to Bootcamp's key
-    const api_key = "trilogy";
 
     // Create Query URL from user input and app_id
     var qryMovies = `http://www.omdbapi.com/?apikey=${api_key}&type=movie&t=${movie}`
@@ -323,37 +369,66 @@ function movieThis() {
     // Check for valid Query URL
     // console.log("---Constructed Query URL---");
     // console.log(qryMovies);
+    // console.log(movie);
 
     // Get API data with Axios.get function which returns a promise
     axios
         .get(qryMovies)
         .then(function (response) {
-            // If Axios call was successful...
+
+            // On success...
+            // Create artistDisplay variable and format artist variable
+            var movieDisplay = movie.replace(/[+]/g, " ").toUpperCase();
+            // console.log(movie);
+            // console.log(movieDisplay);
+
+            // console.log(response.data);
+            // console.log(response.data.Response);
+
             // Check if any results were return.  If not, console an error message.
             if (response.data.Response === "False") {
                 // console.clear();
                 console.log("--------------------------------------------------------------------------");
-                console.log(" Sorry, there are no movies found with the name " + movie.toUpperCase());
+                console.log(" Sorry, there are no movies found with the name " + movieDisplay);
                 console.log("--------------------------------------------------------------------------");
 
             } else {
-                // Create variable 'textMovie'
-                var textMovie = "";
-                // Console  record in the response to the screen
-                textMovieScreen = response.data.Title + "\n" + " Year: " + response.data.Year + "\n" + " IMDB Rating: " + response.data.Ratings[0].Value + "\n" + " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n" + " Produced: " + response.data.Country + "\n" + " Language: " + response.data.Language + "\n" + " Plot: " + response.data.Plot + "\n" + " Actors: " + response.data.Actors;
-                // console.clear();
-                console.log(textMovieScreen);
-                // Write each record in the response to the log file
-                textMovieFile = response.data.Title + "\r" + " Year: " + response.data.Year + "\r" + " IMDB Rating: " + response.data.Ratings[0].Value + "\r" + " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\r" + " Produced: " + response.data.Country + "\r" + " Language: " + response.data.Language + "\r" + " Plot: " + response.data.Plot + "\r" + " Actors: " + response.data.Actors + "\r";
-                fs.appendFile("./files/log.txt", textMovieFile, function (err) {
-                    // If there is an error, log it to the console
-                    if (err) {
-                        console.log(err);
-                    }
-                });
+                // Create variable 'textMovieScreen'
+                var textMovieScreen = "";
+                var textMovieText = "";
+
+                // Check for missing Rotten Tomatoes rating
+                if (response.data.Ratings[1] === undefined) {
+                    // Console record in the response to the screen, minus Rotten Tomatoes
+                    textMovieScreen = "Movie Searched: " + movieDisplay + "\n" + "--------------------------------------------------------------------------\n" + " Year: " + response.data.Year + "\n" + " IMDB Rating: " + response.data.Ratings[0].Value + "\n" + " Produced: " + response.data.Country + "\n" + " Language: " + response.data.Language + "\n" + " Plot: " + response.data.Plot + "\n" + " Actors: " + response.data.Actors;
+                    console.log(textMovieScreen);
+                    // Write record in the response to the log file, minus Rotten Tomatoes
+                    textMovieText = "Movie Searched: " + movieDisplay + "\r" + "--------------------------------------------------------------------------\r" + " Year: " + response.data.Year + "\r" + " IMDB Rating: " + response.data.Ratings[0].Value + "\r" + " Produced: " + response.data.Country + "\r" + " Language: " + response.data.Language + "\r" + " Plot: " + response.data.Plot + "\r" + " Actors: " + response.data.Actors + "\r\r";
+                    fs.appendFile("./files/log.txt", textMovieText, function (err) {
+                        // If there is an error, log it to the console
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                } else {
+
+                    // Console  record in the response to the screen, including Rotten Tomatoes rating
+                    textMovieScreen = "Movie Searched: " + movieDisplay + "\n" + "--------------------------------------------------------------------------\n" + " Year: " + response.data.Year + "\n" + " IMDB Rating: " + response.data.Ratings[0].Value + "\n" + " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n" + " Produced: " + response.data.Country + "\n" + " Language: " + response.data.Language + "\n" + " Plot: " + response.data.Plot + "\n" + " Actors: " + response.data.Actors;
+                    console.log(textMovieScreen);
+                    // Write each record in the response to the log file, including Rotten Tomatoes rating
+                    textMovieText = "Movie Searched: " + movieDisplay + "\r" + "--------------------------------------------------------------------------\r" + " Year: " + response.data.Year + "\r" + " IMDB Rating: " + response.data.Ratings[0].Value + "\r" + " Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\r" + " Produced: " + response.data.Country + "\r" + " Language: " + response.data.Language + "\r" + " Plot: " + response.data.Plot + "\r" + " Actors: " + response.data.Actors + "\r\r";
+                    fs.appendFile("./files/log.txt", textMovieText, function (err) {
+                        // If there is an error, log it to the console
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+
+                }
             }
         })
         .catch(function (error) {
+            // If there is an error, log it to the console
             console.log(error);
         });
 
@@ -362,66 +437,59 @@ function movieThis() {
 // node liri.js do-what-it-says
 // Should read /files/random.txt and execute what is there
 // ----------------------------------------------------
-// Tested and Signed Off: 02/__/2020 PLK
-// spotify-this-song [TBD]
-// movie-this [Tested]
-// concernt-this [Tested]
+// Tested and Signed Off: 02/09/2020 PLK
+//    - spotify-this-song (I Want It That Way)
+//    - movie-this (Tootsie)
+//    - concert-this (Maroon 5)
 // ----------------------------------------------------
 
 function justDoIt() {
 
+    // Read contents of random.txt file
     fs.readFile("./files/random.txt", "utf8", function (error, response) {
 
-        // If the code experiences any errors it will log the error to the console.
+        // If there is an error, log it to the console
         if (error) {
             return console.log(error);
         }
 
-        // Split response
+        // Split file contents into an array at the comma
         var dataArr = response.split(",");
 
         // Console log response and array
-        console.log(response);
-        console.log(dataArr);
+        // console.log(response);
+        // console.log(dataArr);
 
         // Read array to call appropriate function
         switch (dataArr[0]) {
             case "concert-this":
+                // Set artist to name (at index 1) in random.txt
                 artist = dataArr[1];
                 // console.log(artist);
                 concertThis();
                 break;
 
             case "spotify-this-song":
+                // Set song to name (at index 1) in random.txt
                 song = dataArr[1];
                 console.log(song);
                 spotifyThis();
                 break;
 
             case "movie-this":
+                // Set movie to name (at index 1) in random.txt
                 movie = dataArr[1];
                 // console.log(movie);
                 movieThis();
                 break;
 
             default:
-                // If no feature is specified, clear the console and console.log the error.
-                console.clear();
+                // On invalid file data, console.log an error message.
+                console.log(" ");
                 console.log("-----------------------------------------------------------------");
                 console.log(" Sorry, but there is invalid data in /files/random.txt")
                 console.log("-----------------------------------------------------------------");
                 console.log(" ");
         }
-
     });
 }
-
-// Random Options
-// movie-this,Tootsie
-// spotify-this-song,I Want it That Way
-// concert-this,Maroon 5
-
-// Misc
-// -----------------------------------------------------------
-// Clean up user input - replace a any "+" with spaces
-// Clean up query strings to eliminate "+" at the end of them
