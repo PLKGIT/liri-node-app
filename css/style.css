@@ -1,0 +1,23 @@
+/* CSS */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #1a237e;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.highlight {
+    color: #f50057;
+}

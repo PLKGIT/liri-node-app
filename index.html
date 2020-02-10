@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pam Kelly's Liri Bot Homework</title>
+    <!--Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Roboto&display=swap" type="text/css">
+    <!--Materialized CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Materialized icons CSS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--My CSS-->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <header class="indigo darken-4 white-text z-depth-5">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h1>Liri Bot Results</h1>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h4 class="highlight">Click a Section For Results</h4>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col s2">
+                </div>
+
+                <div class="col s8">
+                </div>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header indigo lighten-4 "><i class="material-icons">menu</i>node liri</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <ul>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;No parameters specified</li>
+                                </ul>
+                            </span>
+                        </div>
+                        </span>
+                    </li>
+                    <li>
+                        <div class="collapsible-header indigo lighten-5"><i class="material-icons">menu</i>node liri concert-this</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <ul>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;No artist/band name specified</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;Artist/band name specified</li>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;Artist/band name specified, but no results returned</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;See results in <span class="highlight">log.txt</span></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header indigo lighten-4"><i class="material-icons">menu</i>node liri spotify-this-song</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <ul>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;No song name specified</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;Song name specified</li>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;Song name specified, but no results returned</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;See results in <span class="highlight">log.txt</span></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header indigo lighten-5"><i class="material-icons">menu</i>node liri movie-this</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <ul>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;No movie name specified</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;Movie name specified</li>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;Movie name specified, but no results returned</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;See results in <span class="highlight">log.txt</span></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header indigo lighten-4"><i class="material-icons large">menu</i>node liri do-what-it-says</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <ul>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;<span class="highlight">concert-this</span> in random.txt file</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;<span class="highlight">spotify-this-song</span> in random.txt file</li>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;<span class="highlight">movie-this</span> in random.txt file</li>
+                                    <li><a class="waves-effect waves-light btn blue-grey darken-2">Results</a>&nbsp;&nbsp;Bad data in random.txt file</li>
+                                    <li><a class="waves-effect waves-light btn indigo darken-4">Results</a>&nbsp;&nbsp;See results in <span class="highlight">log.txt</span></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col s2">
+
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="indigo darken-4 white-text">
+        &copy; 2020 Pamela L. Kelly
+    </footer>
+    <!--jQuery JS file-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Materialized JS file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--My JS file -->
+    <script type="text/javascript" src="javascript/homework.js"></script>
+</body>
+</html>
