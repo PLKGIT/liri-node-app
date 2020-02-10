@@ -93,7 +93,7 @@ LIRI is launched by running one of the following commands on the command line.
 
 LIRI is a command line application and its commands cannot be run in a web browser.  Accordingly, I have created a website at https://plkgit.github.io/liri-node-app/ that contains screenshots of the results of each command as well as a PDF copy of the log.txt file.  
 
-Alternatively, links to the screenshots and the log.txt file PDF are included below.
+Alternatively, see below for results screenshots and a PDF copy of the log.txt file after running each command.
 
 1. **node liri**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/01_liri_no_parameters.png)
@@ -150,7 +150,7 @@ Alternatively, links to the screenshots and the log.txt file PDF are included be
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/18_log_txt_file.png)
 
 **PDF of final log.txt**
-https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf
+<a id="raw-url" href="https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf">Download</a> PDF
 
 ## Completed Assignment
 
