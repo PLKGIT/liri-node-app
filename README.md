@@ -29,12 +29,12 @@ LIRI includes four (4) features:
 
 ### Technologies Used
 
-1. LIRI App
+1. LIRI Bot
   * Node JS v12.13.0, including the File System module
-  * Axios Node Package Manager (NPM) v0.19.2
-  * Dotenv NPM v8.2
-  * Moment NPM v2.24
-  * Spotify NPM v1.1.1
+  * Axios Node Package Manager (NPM) v0.19.2 - https://www.npmjs.com/package/axios
+  * Dotenv NPM v8.2 - https://www.npmjs.com/package/dotenv
+  * Moment NPM v2.24 - https://www.npmjs.com/package/moment
+  * Node Spotify API NPM v1.1.1 - https://www.npmjs.com/package/node-spotify-api
   * Bands In Town API - https://www.artists.bandsintown.com
   * OMDB API - https://www.omdbapi.com
   * Spotify API - https://www.npmjs.com/package/node-spotify-api
@@ -150,7 +150,7 @@ Alternatively, see below for results screenshots and a PDF copy of the log.txt f
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/18_log_txt_file.png)
 
 **PDF of final log.txt**
-<a id="raw-url" href="https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf">Download</a> PDF
+![Download PDF](https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf)
 
 ## Completed Assignment
 
