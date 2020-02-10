@@ -148,7 +148,8 @@ Alternatively, see below for results screenshots and a PDF copy of the log.txt f
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/18_log_txt_file.png)
 
 **PDF of final log.txt**
-[Download PDF](https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf)
+
+[Download PDF](https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.zip)
 
 ## Completed Assignment
 
