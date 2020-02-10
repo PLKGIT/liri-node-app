@@ -12,12 +12,19 @@ body {
 
 footer {
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-weight: 400;
     font-size: 22px;
 }
 
 .highlight {
     color: #f50057;
+}
+
+.container {
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+
 }

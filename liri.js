@@ -184,6 +184,7 @@ function concertThis() {
                     // Create and set variable 'textBandsScreen' to Artist's display name and intro text
                     // Console log to screen
                     var textBandsScreen = "Artist Searched: " + artistDisplay + " will be in concert at:" + "\n" + "--------------------------------------------------------------------------";
+                    console.log(" ");
                     console.log(textBandsScreen);
                     // Create and set variable 'textBandsText' to Artist's display name and intro text
                     // Write to the log file
@@ -276,6 +277,7 @@ function spotifyThis() {
 
             } else {
                 // Create and set variable 'textSong' to Song name
+                console.log(" ");
                 var textSongScreen = "Track Searched: " + songDisplay + "\n" + "-----------------------------------------------------------------";
                 // Console log song name
                 console.log(textSongScreen);
@@ -439,7 +441,7 @@ function movieThis() {
 // ----------------------------------------------------
 // Tested and Signed Off: 02/09/2020 PLK
 //    - spotify-this-song (I Want It That Way)
-//    - movie-this (Tootsie)
+//    - movie-this (Dave)
 //    - concert-this (Maroon 5)
 // ----------------------------------------------------
 
@@ -472,7 +474,7 @@ function justDoIt() {
             case "spotify-this-song":
                 // Set song to name (at index 1) in random.txt
                 song = dataArr[1];
-                console.log(song);
+                // console.log(song);
                 spotifyThis();
                 break;
 
