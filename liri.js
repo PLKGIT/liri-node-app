@@ -127,7 +127,7 @@ function concertThis() {
 
     // Set value of artist variable
     if (artist === "") {
-        if (process.argv[3] === undefined) {
+        if (trim(process.argv[3]) === undefined) {
 
             console.log(" ");
             console.log("-----------------------------------------------------------------");
@@ -250,7 +250,7 @@ function spotifyThis() {
 
         // Set song to default
 
-        if (process.argv[3] === undefined) {
+        if (trim(process.argv[3]) === undefined) {
             song = "The Sign"
         } else {
             // Concatenate Song Title, if more than one word
@@ -349,7 +349,7 @@ function movieThis() {
     // Check to see whether movie is empty
     if (movie === "") {
         // Set movie to default
-        if (process.argv[3] === undefined) {
+        if (trim(process.argv[3]) === undefined) {
             movie = "Mr. Nobody";
 
         } else {
@@ -387,7 +387,7 @@ function movieThis() {
             // console.log(response.data);
             // console.log(response.data.Response);
 
-            // Check if any results were return.  If not, console an error message.
+            // Check if any results were returned.  If not, console an error message.
             if (response.data.Response === "False") {
                 // console.clear();
                 console.log("--------------------------------------------------------------------------");
@@ -440,9 +440,9 @@ function movieThis() {
 // Should read /files/random.txt and execute what is there
 // ----------------------------------------------------
 // Tested and Signed Off: 02/09/2020 PLK
-//    - spotify-this-song (I Want It That Way)
-//    - movie-this (Dave)
-//    - concert-this (Maroon 5)
+//    - spotify-this-song,I Want It That Way
+//    - movie-this,Dave
+//    - concert-this,Maroon 5
 // ----------------------------------------------------
 
 function justDoIt() {
