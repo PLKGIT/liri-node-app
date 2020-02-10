@@ -149,8 +149,8 @@ Alternatively, links to the screenshots and the log.txt file PDF are included be
 18. **log.txt contents after do-what-it-says**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/18_log_txt_file.png)
 
-**Final Version of Log.txt**
-![](https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf)
+**PDF of final log.txt**
+https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.pdf
 
 ## Completed Assignment
 
@@ -165,8 +165,11 @@ Full-Stack Coding Bootcamp through UCB Extension
 ### Completed Assignment URLs
 #### Github repository
 [Github Link](https://github.com/PLKGIT/liri-node-app/) at https://github.com/PLKGIT/liri-node-app.
-#### Deployed Page
+#### Display Results website
 [Website Link](https://plkgit.github.io/liri-node-app/) at https://plkgit.github.io/liri-node-app/
+#### LIRI Bot on Portfolios
+[Professional Porfolio](https://www.pamkelly.com/portdev.html) at https://www.pamkelly.com/portdev.html
+[Bootstrap Portfolio](https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html) at https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html
 
 
 Copyright &copy; 2020 Pamela L. Kelly
