@@ -89,7 +89,8 @@ LIRI is a command line application and its commands cannot be run in a web brows
 Alternatively, links to the screenshots and the log.txt file PDF are included below.
 
 1. node liri
-https://github.com/PLKGIT/liri-node-app/blob/master/images/01_liri_no_parameters.png
+(https://github.com/PLKGIT/liri-node-app/blob/master/images/01_liri_no_parameters.png)
+
 2. node liri concert-this
 3. node liri concert-this U2
 4. node liri concert-this Billy Joel
@@ -126,24 +127,3 @@ Full-Stack Coding Bootcamp through UCB Extension
 
 
 Copyright &copy; 2020 Pamela L. Kelly
-
--------------------------------------------------------------
-
-## Project Instructions
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below.
-
-### Add To Your Portfolio
-
-After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
-
-
-### Before You Begin
-
-1. LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
-
-2. Make a new GitHub repository called liri-node-app and clone it to your computer.
-
-3. To retrieve the data that will power this app, you'll need to send requests using the `axios` package to the Bands in Town, Spotify and OMDB APIs. You'll find these Node packages crucial for your assignment.
