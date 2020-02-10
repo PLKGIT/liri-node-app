@@ -89,7 +89,7 @@ LIRI is a command line application and its commands cannot be run in a web brows
 Alternatively, links to the screenshots and the log.txt file PDF are included below.
 
 1. node liri
-(https://github.com/PLKGIT/liri-node-app/blob/master/images/01_liri_no_parameters.png)
+![](https://github.com/PLKGIT/liri-node-app/blob/master/images/01_liri_no_parameters.png)
 
 2. node liri concert-this
 3. node liri concert-this U2
