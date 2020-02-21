@@ -95,6 +95,7 @@ Alternatively, see below for results screenshots and a PDF copy of the log.txt f
 
 1. **node liri**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/01_liri_no_parameters.png)
+Video: ![Result 01](images/liri_01.gif)
 
 2. **node liri concert-this**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/02_liri_concert-this_no_parameters.png)
