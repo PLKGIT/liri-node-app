@@ -127,7 +127,7 @@ function concertThis() {
 
     // Set value of artist variable
     if (artist === "") {
-        if (trim(process.argv[3]) === undefined) {
+        if (process.argv[3] === undefined) {
 
             console.log(" ");
             console.log("-----------------------------------------------------------------");
@@ -250,7 +250,7 @@ function spotifyThis() {
 
         // Set song to default
 
-        if (trim(process.argv[3]) === undefined) {
+        if (process.argv[3] === undefined) {
             song = "The Sign"
         } else {
             // Concatenate Song Title, if more than one word
@@ -349,7 +349,7 @@ function movieThis() {
     // Check to see whether movie is empty
     if (movie === "") {
         // Set movie to default
-        if (trim(process.argv[3]) === undefined) {
+        if (process.argv[3] === undefined) {
             movie = "Mr. Nobody";
 
         } else {
