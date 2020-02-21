@@ -99,51 +99,64 @@ Video: ![Result 01](images/liri_01.gif)
 
 2. **node liri concert-this**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/02_liri_concert-this_no_parameters.png)
+Video: ![Result 02](images/liri_02.gif)
 
 3. **node liri concert-this U2**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/03_liri_concert-this_with_artist_no_results.png)
+Video: ![Result 03](images/liri_03.gif)
 
 4. **node liri concert-this Billy Joel**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/04_liri_concert-this_with_artist.png)
+Video: ![Result 04](images/liri_04.gif)
 
 5. **log.txt contents after concert-this**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/05_log_txt_file.png)
 
 6. **node liri spotify-this-song**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/06_liri_spotify-this-song_no_parameters.png)
+Video: ![Result 06](images/liri_06.gif)
 
 7. **node liri spotify-this-song Blue Bayou**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/07_liri_spotify-this-song_with_song.png)
+Video: ![Result 07](images/liri_07.gif)
 
 8. **node liri spotify-this-song 1zz6**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/08_liri_spotify-this-song_with_song_no_results.png)
+Video: ![Result 08](images/liri_08.gif)
 
 9. **log.txt contents after spotify-this-song**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/09_log_txt_file.png)
 
 10. **node liri movie-this**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/10_liri_movie-this_no_parameters.png)
+Video: ![Result 10](images/liri_10.gif)
 
 11. **node liri movie-this WooFoo**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/11_liri_movie-this_with_movie_no_results.png)
+Video: ![Result 11](images/liri_11.gif)
 
 12. **node liri movie-this Tootsie**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/12_liri_movie-this_with_movie.png)
+Video: ![Result 12](images/liri_12.gif)
 
 13. **log.txt contents after movie-this**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/13_log_txt_file.png)
 
 14. **node liri do-what-it-says (spotify-this-song,I Want it That Way)**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/14_do_what_it_says_spotify-this-song.png)
+Video: ![Result 14](images/liri_14.gif)
 
 15. **node liri do-what-it-says (movie-this,Dave)**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/15_do_what_it_says_movie-this.png)
+Video: ![Result 15](images/liri_15.gif)
 
 16. **node liri do-what-it-says (concert-this,Maroon 5)**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/16_do_what_it_says_concert-this.png)
+Video: ![Result 16](images/liri_16.gif)
 
 17. **node liri do-what-it-says** (empty file)
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/17_do_what_it_says_bad_file.png)
+Video: ![Result 17](images/liri_17.gif)
 
 18. **log.txt contents after do-what-it-says**
 ![](https://github.com/PLKGIT/liri-node-app/blob/master/images/18_log_txt_file.png)
