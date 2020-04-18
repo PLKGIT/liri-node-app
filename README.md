@@ -1,8 +1,7 @@
-# Liri Bot Assignment
-JavaScript Homework #8
+# Liri Bot
 
 ## Overview
-Language Interpretation and Recognition Interface (LIRI) is a command line node application that accepts parameters and returns matching data via application programming interfaces (APIs).  The resulting data is returned to the user via console log and appended to a log file.
+Language Interpretation and Recognition Interface (LIRI) is a command line node application that accepts parameters and returns matching data via application programming interfaces (APIs).  The resulting data is returned to the user via console.log and appended to a log file.
 
 ### Features
 LIRI includes four (4) features:
@@ -26,26 +25,6 @@ LIRI includes four (4) features:
       * Plot
       * Actors in the movie
    4. `do-what-it-says` reads the contents of random.txt, which contains the name of a LIRI feature and an input parameter, and then calls the feature using the supplied input parameter.
-
-### Technologies Used
-
-1. LIRI Bot
-  * Node JS v12.13.0, including the File System module
-  * Axios Node Package Manager (NPM) v0.19.2 - https://www.npmjs.com/package/axios
-  * Dotenv NPM v8.2 - https://www.npmjs.com/package/dotenv
-  * Moment NPM v2.24 - https://www.npmjs.com/package/moment
-  * Node Spotify API NPM v1.1.1 - https://www.npmjs.com/package/node-spotify-api
-  * Bands In Town API - https://www.artists.bandsintown.com
-  * OMDB API - https://www.omdbapi.com
-  * Spotify API - https://www.npmjs.com/package/node-spotify-api
-
-2. Display Results Page
-  * HTML/CSS
-  * JavaScript/jQuery
-  * Google Fonts
-  * Google Icons
-  * Materialize CSS
-  * Materialize JS
 
 ### Using LIRI
 
@@ -86,6 +65,27 @@ LIRI is launched by running one of the following commands on the command line:
   * Calls **justDoIt()** function
   * Reads contents of /files/random.txt
   * Calls the liri feature (value 1) using the provided input (value 2) in the file (e.g. spotify-this-song,I Want It That Way)
+
+### Technology
+
+1. LIRI Bot
+  * Node JS v12.13.0, including the File System module
+  * Axios Node Package Manager (NPM) v0.19.2 - https://www.npmjs.com/package/axios
+  * Dotenv NPM v8.2 - https://www.npmjs.com/package/dotenv
+  * Moment NPM v2.24 - https://www.npmjs.com/package/moment
+  * Node Spotify API NPM v1.1.1 - https://www.npmjs.com/package/node-spotify-api
+  * Bands In Town API - https://www.artists.bandsintown.com
+  * OMDB API - https://www.omdbapi.com
+  * Spotify API - https://www.npmjs.com/package/node-spotify-api
+
+2. Display Results Page
+  * HTML5
+  * CSS3
+  * JavaScript
+  * jQuery
+  * Google Fonts
+  * Google Icons
+  * Materialize CSS/JS
 
 ### LIRI Results
 
@@ -165,24 +165,18 @@ Video: ![Result 17](images/liri_17.gif)
 
 [Download PDF](https://github.com/PLKGIT/liri-node-app/blob/master/images/log_02092020.zip)
 
-## Completed Assignment
+## Development Details
 
-### Due
-Monday, February 10, 2020
-
-### Student
+### Developer
 Pam Kelly at [esq.kelly@gmail.com](mailto:esq.kelly@gmail.com)
 
-Full-Stack Coding Bootcamp through UCB Extension
+### GitHub Repository
+[GitHub](https://github.com/PLKGIT/liri-node-app/) at https://github.com/PLKGIT/liri-node-app.
 
-### Completed Assignment URLs
-#### Github repository
-[Github Link](https://github.com/PLKGIT/liri-node-app/) at https://github.com/PLKGIT/liri-node-app.
-#### Display Results website
-[Website Link](https://plkgit.github.io/liri-node-app/) at https://plkgit.github.io/liri-node-app/
-#### LIRI Bot on Portfolios
+### Display Results website
+[LIRIBOT Results](https://plkgit.github.io/liri-node-app/) at https://plkgit.github.io/liri-node-app/
+
+### Porfolio
 [Professional Porfolio](https://www.pamkelly.com/portdev.html) at https://www.pamkelly.com/portdev.html
-[Bootstrap Portfolio](https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html) at https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html
-
 
 Copyright &copy; 2020 Pamela L. Kelly
