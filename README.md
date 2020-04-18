@@ -89,7 +89,7 @@ LIRI is launched by running one of the following commands on the command line:
 
 ### LIRI Results
 
-LIRI is a command line application; accordingly, its commands cannot be run in a web browser.  Therefore, I have created a website at https://plkgit.github.io/liri-node-app/ that contains screenshots of the results of each command as well as a PDF copy of the log.txt file.  
+LIRI Bot is a command line application; accordingly, its commands cannot be run in a web browser.  Therefore, I have created a website at https://plkgit.github.io/liri-node-app/ that contains screenshots of the results of each command as well as a PDF copy of the log.txt file.  
 
 Alternatively, see below for results screenshots and a PDF copy of the log.txt file after running each command.
 
