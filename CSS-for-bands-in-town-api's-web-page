@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>blog</title>
+	<style type="text/css">
+		
+h1{float: right;
+	margin: 2px auto 2px;
+    white-space: pre-wrap;
+    font-size: 72px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Blippo, fantaisy';
+    line-height: 90px;
+    letter-spacing: 2px;
+		
+text-shadow: 6px -9px 3px #b221c3;
+	animation: pulse 2s infinite;}
+
+
+	@keyframes pulse {
+		70% {
+		transform: scale(1);
+		text-shadow: : #b221c3;
+	}
+
+ "items-wrapper blog" {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+     box-shadow: inset -10px -5px 0px 3px #af1aca;
+     animation: pulse 2s infinite;}
+
+@keyframes pulse {
+		70% {
+		transform: scale(1);
+		box-shadow: #b221c3;}
+
+
+	sitenew.collection-type-blog #content-wrapper {
+    background: #1419a99e;}
+
+	</style>
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
